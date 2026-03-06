@@ -85,6 +85,24 @@ public class UniteEnseignementBusiness {
     }
 
     public void setUnitesEnseignement(List<UniteEnseignement> unitesEnseignement) {
-        this.unitesEnseignement = unitesEnseignement;
+        UniteEnseignementBusiness.unitesEnseignement = unitesEnseignement;
+    }
+
+    // ── Methods required by UERessources ──────────────────────────────────────
+
+    public List<UniteEnseignement> getAllUEs() {
+        return unitesEnseignement;
+    }
+
+    public boolean addUE(UniteEnseignement ue) {
+        return unitesEnseignement.add(ue);
+    }
+
+    public boolean updateUE(int code, UniteEnseignement updatedUE) {
+        return updateUniteEnseignement(code, updatedUE);
+    }
+
+    public boolean deleteUE(int code) {
+        return deleteUniteEnseignement(code);
     }
 }
